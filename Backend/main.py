@@ -33,7 +33,7 @@ async def index(file: UploadFile = File(...)):
         text = page.extract_text()
         prompt = ChatPromptTemplate.from_template(template=template)
         chain = prompt | model
-       ## summarized_text += chain.invoke({"Input_Text": text})
+        summarized_text += chain.invoke({"Input_Text": text})
     os.remove(local_file_path)
     return {"Summary": summarized_text}
 
